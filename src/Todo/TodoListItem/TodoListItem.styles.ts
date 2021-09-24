@@ -52,6 +52,11 @@ const TodoListItem = Styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  .openbook-button {
+    cursor: pointer;
+    font-size: 26px;
+  }
 `;
 
 export const TodoListItemStyles = {

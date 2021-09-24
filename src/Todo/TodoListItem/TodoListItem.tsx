@@ -1,5 +1,8 @@
 import React from 'react'
 import TodoListItemView from './TodoListItemView';
+import { FiPlusCircle } from "react-icons/fi";
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
+
 
 interface IProps {
   todo?: {
@@ -21,13 +24,30 @@ const TodoListItem: React.FC<IProps> = (props) => {
       title: '', 
       content: ''
     }, 
-    number = 0, 
+    number,
     onTodoDelete,
     onTodoRewrite,
     onOpenBook,
   } = props;
 
-  return <TodoListItemView todo={todo} number={number} onTodoDelete={onTodoDelete} onTodoRewrite={onTodoRewrite} />
+  const idCheck = number 
+    ? <span className='number'>{number}</span>
+    : (<div className='openbook-button'><FiPlusCircle onClick={onOpenBook} /></div>)
+
+  const buttonGroup = number
+    ? (<span className='buttons'>
+        <button onClick={() => onTodoRewrite(todo)}><FiEdit2 /></button>
+        <button onClick={() => onTodoDelete(todo)}><FiTrash2 /></button>
+      </span>)
+    : '';
+
+  return (
+    <TodoListItemView 
+      todo={todo} 
+      listId={idCheck} 
+      buttonGroup={buttonGroup}
+    />
+  )
 }
 
 export default TodoListItem

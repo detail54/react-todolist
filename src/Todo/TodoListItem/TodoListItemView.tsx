@@ -1,6 +1,5 @@
 import React from 'react'
 import { TodoListItemStyles as Styled } from './TodoListItem.styles';
-import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 interface IProps {
   todo: {
@@ -8,26 +7,22 @@ interface IProps {
     title: string;
     content: string;
   }
-  number: number;
-  onTodoDelete: (todo:any) => void;
-  onTodoRewrite: (todo:any) => void;
+  listId: any;
+  buttonGroup: any;
 }
 
 const TodoListItemView: React.FC<IProps> = (props) => {
 
-  const { todo, number, onTodoDelete, onTodoRewrite } = props;
+  const { todo, listId, buttonGroup } = props;
 
   return (
     <Styled.TodoListItem>
       <div>
-        <span className='number'>{number}</span>
+        {listId}
         <span className='todo'>
-          <span>{todo.title}</span>  {/*onClick*/}
+          <span>{todo.title}</span>  {/*onClick 일정 상세보기*/}
         </span>
-        <span className='buttons'>
-          <button onClick={() => onTodoRewrite(todo)}><FiEdit2 /></button>
-          <button onClick={() => onTodoDelete(todo)}><FiTrash2 /></button>
-        </span>
+        {buttonGroup}
       </div>
     </Styled.TodoListItem>
   )

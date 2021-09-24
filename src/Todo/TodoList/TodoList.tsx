@@ -19,7 +19,7 @@ const TodoList: React.FC<IProps> = (props) => {
     ? <TodoListItem onTodoRewrite={onTodoRewrite} onTodoDelete={onTodoDelete}/>
     : list.map((item, index) => (
     <TodoListItem key={index} todo={item} number={index + 1} onTodoDelete={onTodoDelete} onTodoRewrite={onTodoRewrite} />
-  )).concat(<TodoListItem onTodoRewrite={onTodoRewrite} onTodoDelete={onTodoDelete} />);
+  )).concat(<TodoListItem onTodoRewrite={onTodoRewrite} onTodoDelete={onTodoDelete} onOpenBook={onOpenBook} />);
 
   const viewProps = {
     data,

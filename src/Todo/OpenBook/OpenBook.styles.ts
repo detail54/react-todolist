@@ -7,10 +7,30 @@ const OpenBook = Styled.div`
   border-left: 3px dashed gray;
   border-right: 3px dashed gray;
 
-  .open-book-header {
+  .openbook-close-button-div {
+    margin-top: 5px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    button {
+      font-size: 25px;
+      background: none;
+      border: none;
+      color: #85999e;
+      cursor: pointer;
+    }
+
+    button:hover {
+      font-size: 28px;
+    }
+  }
+
+  .openbook-header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0px;
 
     span {
       display: block;
@@ -22,7 +42,7 @@ const OpenBook = Styled.div`
     }
   }
 
-  .open-book {
+  .openbook-body {
 
   }
   

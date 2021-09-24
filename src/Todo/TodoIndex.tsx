@@ -35,6 +35,7 @@ const TodoListIndex: React.FC = () => {
   const openBookViewProps = {
     onTodoCreate,
     lastItemId,
+    onCloseOpenBook,
   }
 
   const openBook = open 

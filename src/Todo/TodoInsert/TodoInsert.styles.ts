@@ -36,7 +36,7 @@ const TodoInsert = Styled.div`
 
     textarea {
       width: 99%;
-      height: 420px;
+      height: 400px;
       background: white;
       border: none;
       font-size: 20px;
@@ -62,12 +62,13 @@ const TodoInsert = Styled.div`
       color: white;
       font-size: 25px;
       padding: 2px 10px 2px 10px;
+      cursor: pointer;
     }
 
     button:focus {
       border: none;
     }
-    
+
     button:hover {
       border: 2px solid white;
     }
