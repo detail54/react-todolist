@@ -1,10 +1,9 @@
 import Styled from 'styled-components'
 
-const TodoList = Styled.section`
+const TodoList = Styled.div`
   width: 500px;
-  padding: 15px;
-  border: 1px solid black;
-  border-radius: 10px;
+  height: 700px;
+  max-height: 700px;
 
   .header, .footer {
     background: #cee6eb;
