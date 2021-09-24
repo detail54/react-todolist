@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 const TodoIndex = Styled.section`
-  border: 1px solid black;
+  border: 3px solid black;
   border-radius: 10px;
 
   .header, .footer {
@@ -9,10 +9,13 @@ const TodoIndex = Styled.section`
   }
 
   .header {
+    border-radius: 10px 10px 0px 0px;
     margin: 0px;
     padding: 20px;
     text-align: center;
     font-size: 50px;
+    border-bottom: 3px solid black;
+    color: #767676;
   }
 
   .body {
@@ -25,7 +28,8 @@ const TodoIndex = Styled.section`
 
   .footer {
     height: 50px;
-    border-radius: 0px 0px 8px 8px;
+    border-radius: 0px 0px 10px 10px;
+    border-top: 3px solid black;
   }
 `;
 

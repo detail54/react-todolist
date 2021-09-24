@@ -19,8 +19,10 @@ const TodoInsert: React.FC<IProps> = (props) => {
   const [ todo, setTodo ] = useState<ITodo>({id: 0, title: '', content: ''});
 
   const onSetTodo = () => {
-    onTodoCreate({...todo, id: lastItemId + 1});
-    setTodo({id:0, title: '', content: ''})
+    if (todo.title !== ''){
+      onTodoCreate({...todo, id: lastItemId + 1});
+      setTodo({id:0, title: '', content: ''})
+    }
   }
 
   const onChangeTitle = (text: string) => {

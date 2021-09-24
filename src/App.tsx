@@ -1,10 +1,10 @@
 import './App.css';
-import TodoListIndex from './Todo/TodoListIndex';
+import TodoIndex from './Todo/TodoIndex';
 
 function App() {
   return (
     <div className="App">
-      <TodoListIndex />
+      <TodoIndex />
     </div>
   );
 }

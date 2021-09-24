@@ -10,6 +10,7 @@ interface IProps {
   number?: number;
   onTodoDelete: (todo:any) => void;
   onTodoRewrite: (todo:any) => void;
+  onOpenBook?: () => void;
 }
 
 const TodoListItem: React.FC<IProps> = (props) => {
@@ -22,7 +23,8 @@ const TodoListItem: React.FC<IProps> = (props) => {
     }, 
     number = 0, 
     onTodoDelete,
-    onTodoRewrite
+    onTodoRewrite,
+    onOpenBook,
   } = props;
 
   return <TodoListItemView todo={todo} number={number} onTodoDelete={onTodoDelete} onTodoRewrite={onTodoRewrite} />
