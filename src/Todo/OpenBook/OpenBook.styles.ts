@@ -5,11 +5,13 @@ const OpenBook = Styled.div`
   height: 700px;
   max-height: 700px;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
+
 
   .open-book {
 
   }
+  
 `;
 
 export const OpenBookStyles = {

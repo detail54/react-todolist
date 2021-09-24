@@ -15,14 +15,9 @@ const TodoListView: React.FC<IProps> = (props) => {
   return (
     <>
       <Styled.TodoList>
-        <div className='header'>
-          <h2>TodoList</h2>
-          <TodoInsert onTodoCreate={onTodoCreate} lastItemId={lastItemId} />
-        </div>
+          {/* <TodoInsert onTodoCreate={onTodoCreate} lastItemId={lastItemId} /> */}
         <div className='todo-list'>
           {data}
-        </div>
-        <div className='footer'>
         </div>
       </Styled.TodoList>
     </>

@@ -21,8 +21,13 @@ const TodoListIndex: React.FC = () => {
 
   return (
     <Styled.TodoIndex>
-      <TodoList /> 
-      {openBook}
+      <h1 className='header'>TodoList</h1>
+      <div className='body'>
+        <TodoList /> 
+        {openBook}
+      </div>
+      <div className='footer'>
+      </div>
     </Styled.TodoIndex>
   )
 }

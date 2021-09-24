@@ -1,9 +1,7 @@
 import Styled from 'styled-components';
 
 const TodoListItem = Styled.div`
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 1px dotted black;
   padding: 10px;
 
   div {
