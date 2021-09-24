@@ -2,13 +2,19 @@ import Styled from 'styled-components'
 
 const TodoList = Styled.section`
   width: 500px;
+  padding: 15px;
   border: 1px solid black;
-  border-radius: 8px;
+  border-radius: 10px;
+
+  .header, .footer {
+    background: #cee6eb;
+  }
 
   .header {
     text-align: center;
-    border-bottom: 1px solid black;
-    background: #c5e1e7;
+    border: 1px solid black;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 30px;
   }
 
   .header h2 {
@@ -16,15 +22,19 @@ const TodoList = Styled.section`
     padding: 20px 0px 20px 0px;
   }
 
-  .input-box {
-    display: flex;
-    justify-content: right;
-    align-items: center;
+  .todo-list {
+    
   }
 
-  div:nth-last-child(1) {
-    border: none;
+  .footer {
+    height: 50px;
+    border-radius: 0px 0px 8px 8px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+
   }
+  
 `;
 
 export const TodoListStyles = {
