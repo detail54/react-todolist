@@ -1,5 +1,4 @@
 import React from 'react'
-import TodoInsert from '../TodoInsert/TodoInsert';
 import { OpenSectionStyles as Styled } from './OpenSection.styles';
 import { FiXCircle } from "react-icons/fi";
 
