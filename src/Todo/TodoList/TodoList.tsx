@@ -34,7 +34,7 @@ const TodoList: React.FC<IProps> = (props) => {
     ? todoAdd(0)
     : list.map((item, index) => (
     <TodoListItem 
-      key={index} 
+      key={item.id} 
       todo={item} 
       number={index + 1} 
       onOpenDetailSection={onOpenDetailSection}
