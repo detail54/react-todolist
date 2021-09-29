@@ -5,6 +5,7 @@ import TodoListData from './TodoListData';
 import { TodoIndexStyles as Styled } from './TodoIndex.styles';
 import TodoInsert from './TodoInsert/TodoInsert';
 import TodoDetail from './TodeDetail/TodoDetail';
+import TodoRewrite from './TodoRewrite/TodoRewrite';
 
 const TodoListIndex: React.FC = () => {
 
@@ -19,15 +20,6 @@ const TodoListIndex: React.FC = () => {
     setList(list.concat(todo));
   }
 
-  const onTodoDelete = (todo: any) => {
-    setList(list.filter(list => list.id !== todo.id))
-  }
-
-  // const onTodoRewrite = (todo: any) => {
-  //   const data = list.find(list => list.id === todo.id);
-  //   setList([...list, list[data? data.id - 1 : 0] = todo]);
-  // }
-
   const onOpenInsertSection = () => {
     setOpen(true);
     setOsTilte('일정 추가');
@@ -37,12 +29,23 @@ const TodoListIndex: React.FC = () => {
   const onOpenDetailSection = (todo: any) => {
     setOpen(true);
     setOsTilte('일정 상세');
-    setOsBody(<TodoDetail todo={todo}/>);
+    setOsBody(<TodoDetail todo={todo} onOpenRewriteSection={onOpenRewriteSection} />);
+  }
+
+  const onTodoRewrite = (todo: any) => {
+    const data = list.find(list => list.id === todo.id);
+    setList([...list, list[data? data.id - 1 : 0] = {...todo}]);
+    onOpenDetailSection(todo);
   }
 
   const onOpenRewriteSection = (todo: any) => {
     setOpen(true);
     setOsTilte('일정 수정');
+    setOsBody(<TodoRewrite todo={todo} onTodoRewrite={onTodoRewrite}/>);
+  }
+
+  const onTodoDelete = (todo: any) => {
+    setList(list.filter(list => list.id !== todo.id))
   }
 
   const onCloseSection = () => {

@@ -13,7 +13,7 @@ interface IProps {
   number?: number;
   onOpenDetailSection?: (todo: any) => void;
   onTodoDelete: (todo:any) => void;
-  onTodoRewrite: (todo:any) => void;
+  onOpenRewriteSection: (todo:any) => void;
   onOpenInsertSection?: () => void;
 }
 
@@ -28,7 +28,7 @@ const TodoListItem: React.FC<IProps> = (props) => {
     number,
     onOpenDetailSection,
     onTodoDelete,
-    onTodoRewrite,
+    onOpenRewriteSection,
     onOpenInsertSection,
   } = props;
 
@@ -38,7 +38,7 @@ const TodoListItem: React.FC<IProps> = (props) => {
 
   const buttonGroup = number
     ? (<span className='buttons'>
-        <button onClick={() => onTodoRewrite(todo)}><FiEdit2 /></button>
+        <button onClick={() => onOpenRewriteSection(todo)}><FiEdit2 /></button>
         <button onClick={() => onTodoDelete(todo)}><FiTrash2 /></button>
       </span>)
     : '';

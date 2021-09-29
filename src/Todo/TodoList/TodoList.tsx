@@ -23,7 +23,10 @@ const TodoList: React.FC<IProps> = (props) => {
   } = props;
 
   const todoAdd = (
-    <TodoListItem onTodoRewrite={onOpenRewriteSection} onTodoDelete={onTodoDelete} onOpenInsertSection={onOpenInsertSection}/>
+    <TodoListItem 
+      onOpenRewriteSection={onOpenRewriteSection} 
+      onTodoDelete={onTodoDelete} 
+      onOpenInsertSection={onOpenInsertSection}/>
   );
 
   const data = list.length < 1
@@ -35,7 +38,7 @@ const TodoList: React.FC<IProps> = (props) => {
       number={index + 1} 
       onOpenDetailSection={onOpenDetailSection}
       onTodoDelete={onTodoDelete} 
-      onTodoRewrite={onOpenRewriteSection} />
+      onOpenRewriteSection={onOpenRewriteSection} />
   )).concat(todoAdd);
 
   const viewProps = {

@@ -6,12 +6,13 @@ interface IProps {
     id: number;
     title: string;
     content: string;
-  }
+  };
+  onOpenRewriteSection: (todo: any) => void;
 } 
 
 const TodoDetailView: React.FC<IProps> = (props) => {
 
-  const { todo } = props;
+  const { todo, onOpenRewriteSection } = props;
 
   return (
     <Styled.TodoDetail>
@@ -22,6 +23,9 @@ const TodoDetailView: React.FC<IProps> = (props) => {
       <h2>내용</h2>
       <div className='detail-body'>
         {todo.content}
+      </div>
+      <div className='detail-button-div'>
+        <button onClick={() => onOpenRewriteSection(todo)}>Rewrite</button>
       </div>
     </Styled.TodoDetail>
   )

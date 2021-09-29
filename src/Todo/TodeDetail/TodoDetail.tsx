@@ -6,14 +6,15 @@ interface IProps {
     id: number;
     title: string;
     content: string;
-  }
+  };
+  onOpenRewriteSection: (todo: any) => void;
 }
 
 const TodoDetail: React.FC<IProps> = (props) => {
 
-  const { todo } = props;
+  const { todo, onOpenRewriteSection } = props;
 
-  return <TodoDetailView todo={todo}/>
+  return <TodoDetailView todo={todo} onOpenRewriteSection={onOpenRewriteSection}/>
 }
 
 export default TodoDetail
