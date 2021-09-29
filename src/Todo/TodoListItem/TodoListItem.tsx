@@ -25,7 +25,7 @@ const TodoListItem: React.FC<IProps> = (props) => {
       title: '', 
       content: ''
     }, 
-    number,
+    number = 0,
     onOpenDetailSection,
     onTodoDelete,
     onOpenRewriteSection,

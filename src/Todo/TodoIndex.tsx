@@ -21,27 +21,30 @@ const TodoListIndex: React.FC = () => {
   }
 
   const onOpenInsertSection = () => {
-    setOpen(true);
-    setOsTilte('일정 추가');
+    setOsTilte('Todo Add');
     setOsBody(<TodoInsert onTodoCreate={onTodoCreate} lastItemId={lastItemId} />);
+    setOpen(true);
   }
 
   const onOpenDetailSection = (todo: any) => {
-    setOpen(true);
-    setOsTilte('일정 상세');
+    setOsTilte('Todo Detail');
     setOsBody(<TodoDetail todo={todo} onOpenRewriteSection={onOpenRewriteSection} />);
+    setOpen(true);
   }
 
   const onTodoRewrite = (todo: any) => {
-    const data = list.find(list => list.id === todo.id);
-    setList([...list, list[data? data.id - 1 : 0] = {...todo}]);
+    const listCopy = [...list];
+    const index = listCopy.find(listCopy => listCopy.id === todo.id);
+    listCopy.splice(index ? index.id - 1 : 0, 1, todo);
+
+    setList([...listCopy]);
     onOpenDetailSection(todo);
   }
 
   const onOpenRewriteSection = (todo: any) => {
-    setOpen(true);
-    setOsTilte('일정 수정');
+    setOsTilte('Todo Rewrite');
     setOsBody(<TodoRewrite todo={todo} onTodoRewrite={onTodoRewrite}/>);
+    setOpen(true);
   }
 
   const onTodoDelete = (todo: any) => {
