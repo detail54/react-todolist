@@ -1,5 +1,4 @@
 import React from 'react'
-import TodoInsert from '../TodoInsert/TodoInsert';
 import { TodoListStyles as Styled} from './TodoList.styles';
 
 interface IProps {
