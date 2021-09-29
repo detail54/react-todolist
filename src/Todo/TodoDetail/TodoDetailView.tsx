@@ -1,6 +1,6 @@
 import React from 'react'
 import TodoInsert from '../TodoInsert/TodoInsert';
-import { OpenBookStyles as Styled } from './OpenBook.styles';
+import { TodoDetailStyles as Styled } from './TodoDetail.styles';
 import { FiXCircle } from "react-icons/fi";
 
 
@@ -10,23 +10,23 @@ interface IProps {
   onCloseOpenBook: () => void;
 }
 
-const OpenBookView: React.FC<IProps> = (props) => {
+const TodoDetailView: React.FC<IProps> = (props) => {
 
   const { onTodoCreate, lastItemId, onCloseOpenBook } = props;
 
   return (
-    <Styled.OpenBook>
-      <div className='openbook-close-button-div'>
+    <Styled.TodoDetail>
+      <div className='todo-detail-close-button-div'>
         <button onClick={onCloseOpenBook}><FiXCircle /></button>
       </div>
-      <h1 className='openbook-header'>
+      <h1 className='todo-detail-header'>
         <span>일정 추가</span>
       </h1>
-      <div className='openbook-body'>
+      <div className='todo-detail-body'>
         <TodoInsert onTodoCreate={onTodoCreate} lastItemId={lastItemId} />
       </div>
-    </Styled.OpenBook>
+    </Styled.TodoDetail>
   )
 }
 
-export default OpenBookView
+export default TodoDetailView

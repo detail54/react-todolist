@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import OpenBook from './OpenBook/OpenBook';
+import OpenBook from './TodoDetail/TodoDetail';
 import TodoList from './TodoList/TodoList';
 import TodoListData from './TodoListData';
 import { TodoIndexStyles as Styled } from './TodoIndex.styles';

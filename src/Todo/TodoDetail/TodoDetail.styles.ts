@@ -1,13 +1,13 @@
 import Styled from 'styled-components';
 
-const OpenBook = Styled.div`
+const TodoDetail = Styled.div`
   width: 500px;
   height: 700px;
   max-height: 700px;
   border-left: 3px dashed gray;
   border-right: 3px dashed gray;
 
-  .openbook-close-button-div {
+  .todo-detail-close-button-div {
     margin-top: 5px;
     display: flex;
     justify-content: right;
@@ -26,7 +26,7 @@ const OpenBook = Styled.div`
     }
   }
 
-  .openbook-header {
+  .todo-detail-header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,12 +42,12 @@ const OpenBook = Styled.div`
     }
   }
 
-  .openbook-body {
+  .todo-detail-body {
 
   }
   
 `;
 
-export const OpenBookStyles = {
-  OpenBook,
+export const TodoDetailStyles = {
+  TodoDetail,
 }
