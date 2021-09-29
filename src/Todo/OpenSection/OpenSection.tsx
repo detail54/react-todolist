@@ -1,5 +1,5 @@
 import React from 'react'
-import TodoDetailView from './TodoDetailView';
+import OpenSectionView from './OpenSectionView';
 
 interface IProps {
   onTodoCreate: (todo:any) => void;
@@ -7,7 +7,7 @@ interface IProps {
   onCloseOpenBook: () => void;
 }
 
-const TodoDetail: React.FC<IProps> = (props) => {
+const OpenSection: React.FC<IProps> = (props) => {
 
   const { onTodoCreate, lastItemId, onCloseOpenBook } = props;
 
@@ -17,7 +17,7 @@ const TodoDetail: React.FC<IProps> = (props) => {
     onCloseOpenBook,
   }
 
-  return <TodoDetailView {...viewProps} />
+  return <OpenSectionView {...viewProps} />
 }
 
-export default TodoDetail
+export default OpenSection

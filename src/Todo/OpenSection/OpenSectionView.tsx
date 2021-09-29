@@ -1,6 +1,6 @@
 import React from 'react'
 import TodoInsert from '../TodoInsert/TodoInsert';
-import { TodoDetailStyles as Styled } from './TodoDetail.styles';
+import { OpenSectionStyles as Styled } from './OpenSection.styles';
 import { FiXCircle } from "react-icons/fi";
 
 
@@ -10,23 +10,23 @@ interface IProps {
   onCloseOpenBook: () => void;
 }
 
-const TodoDetailView: React.FC<IProps> = (props) => {
+const OpenSectionView: React.FC<IProps> = (props) => {
 
   const { onTodoCreate, lastItemId, onCloseOpenBook } = props;
 
   return (
-    <Styled.TodoDetail>
-      <div className='todo-detail-close-button-div'>
+    <Styled.OpenSection>
+      <div className='open-section-close-button-div'>
         <button onClick={onCloseOpenBook}><FiXCircle /></button>
       </div>
-      <h1 className='todo-detail-header'>
+      <h1 className='open-section-header'>
         <span>일정 추가</span>
       </h1>
-      <div className='todo-detail-body'>
+      <div className='open-section-body'>
         <TodoInsert onTodoCreate={onTodoCreate} lastItemId={lastItemId} />
       </div>
-    </Styled.TodoDetail>
+    </Styled.OpenSection>
   )
 }
 
-export default TodoDetailView
+export default OpenSectionView

@@ -1,13 +1,13 @@
 import Styled from 'styled-components';
 
-const TodoDetail = Styled.div`
+const OpenSection = Styled.div`
   width: 500px;
   height: 700px;
   max-height: 700px;
   border-left: 3px dashed gray;
   border-right: 3px dashed gray;
 
-  .todo-detail-close-button-div {
+  .open-section-close-button-div {
     margin-top: 5px;
     display: flex;
     justify-content: right;
@@ -22,11 +22,11 @@ const TodoDetail = Styled.div`
     }
 
     button:hover {
-      font-size: 28px;
+      color: #c2d1d4;
     }
   }
 
-  .todo-detail-header {
+  .open-section-header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,12 +42,12 @@ const TodoDetail = Styled.div`
     }
   }
 
-  .todo-detail-body {
+  .open-section-body {
 
   }
   
 `;
 
-export const TodoDetailStyles = {
-  TodoDetail,
+export const OpenSectionStyles = {
+  OpenSection,
 }

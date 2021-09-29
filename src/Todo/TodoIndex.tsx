@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import OpenBook from './TodoDetail/TodoDetail';
+import OpenSection from './OpenSection/OpenSection';
 import TodoList from './TodoList/TodoList';
 import TodoListData from './TodoListData';
 import { TodoIndexStyles as Styled } from './TodoIndex.styles';
@@ -39,7 +39,7 @@ const TodoListIndex: React.FC = () => {
   }
 
   const openBook = open 
-  ? <OpenBook {...openBookViewProps} />
+  ? <OpenSection {...openBookViewProps} />
   : '';
 
 
