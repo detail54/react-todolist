@@ -14,7 +14,11 @@ const TodoDetail: React.FC<IProps> = (props) => {
 
   const { todo, onOpenRewriteSection } = props;
 
-  return <TodoDetailView todo={todo} onOpenRewriteSection={onOpenRewriteSection}/>
+  const content = todo.content.split(/(?:\r\n|\r|\n)/g).map((content, index) => (
+    <span key={index}>{content}<br/></span>
+  ));
+
+  return <TodoDetailView todo={todo} content={content} onOpenRewriteSection={onOpenRewriteSection}/>
 }
 
 export default TodoDetail
