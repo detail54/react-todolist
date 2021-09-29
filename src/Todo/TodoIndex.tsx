@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import OpenSection from './OpenSection/OpenSection';
-import TodoList from './TodoList/TodoList';
 import TodoListData from './TodoListData';
-import { TodoIndexStyles as Styled } from './TodoIndex.styles';
 import TodoInsert from './TodoInsert/TodoInsert';
 import TodoDetail from './TodeDetail/TodoDetail';
 import TodoRewrite from './TodoRewrite/TodoRewrite';
+import TodoIndexView from './TodoIndexView';
 
 const TodoListIndex: React.FC = () => {
 
@@ -65,7 +64,6 @@ const TodoListIndex: React.FC = () => {
   ? <OpenSection {...openSectionViewProps} />
   : '';
 
-
   const todoListViewProps = {
     list,
     onOpenRewriteSection,
@@ -75,17 +73,12 @@ const TodoListIndex: React.FC = () => {
     onOpenDetailSection,
   }
 
-  return (
-    <Styled.TodoIndex>
-      <h1 className='header'>TodoList</h1>
-      <div className='body'>
-        <TodoList {...todoListViewProps}/> 
-        {openSection}
-      </div>
-      <div className='footer'>
-      </div>
-    </Styled.TodoIndex>
-  )
+  const viewProps = {
+    todoListViewProps,
+    openSection
+  }
+
+  return <TodoIndexView {...viewProps} />
 }
 
 export default TodoListIndex
