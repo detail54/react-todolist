@@ -9,18 +9,19 @@ interface IProps {
   }
   listId: any;
   buttonGroup: any;
+  onOpenDetailSection?: (todo: any) => void;
 }
 
 const TodoListItemView: React.FC<IProps> = (props) => {
 
-  const { todo, listId, buttonGroup } = props;
+  const { todo, listId, buttonGroup, onOpenDetailSection = () => {} } = props;
 
   return (
     <Styled.TodoListItem>
       <div>
         {listId}
         <span className='todo'>
-          <span>{todo.title}</span>  {/*onClick 일정 상세보기*/}
+          <span onClick={() => onOpenDetailSection(todo)}>{todo.title}</span>
         </span>
         {buttonGroup}
       </div>

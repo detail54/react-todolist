@@ -3,11 +3,15 @@ import OpenSection from './OpenSection/OpenSection';
 import TodoList from './TodoList/TodoList';
 import TodoListData from './TodoListData';
 import { TodoIndexStyles as Styled } from './TodoIndex.styles';
+import TodoInsert from './TodoInsert/TodoInsert';
+import TodoDetail from './TodeDetail/TodoDetail';
 
 const TodoListIndex: React.FC = () => {
 
   const [ open, setOpen ] = useState(false);
   const [ list, setList ] = useState(TodoListData);
+  const [ osTitle, setOsTilte ] = useState('');
+  const [ osBody, setOsBody ] = useState(<></>);
 
   const lastItemId = list.length < 1 ? 0 : list[list.length - 1].id;
 
@@ -19,36 +23,50 @@ const TodoListIndex: React.FC = () => {
     setList(list.filter(list => list.id !== todo.id))
   }
 
-  const onTodoRewrite = (todo: any) => {
-    const data = list.find(list => list.id === todo.id);
-    setList([...list, list[data? data.id - 1 : 0] = todo]);
-  }
+  // const onTodoRewrite = (todo: any) => {
+  //   const data = list.find(list => list.id === todo.id);
+  //   setList([...list, list[data? data.id - 1 : 0] = todo]);
+  // }
 
-  const onOpenBook = () => {
+  const onOpenInsertSection = () => {
     setOpen(true);
+    setOsTilte('일정 추가');
+    setOsBody(<TodoInsert onTodoCreate={onTodoCreate} lastItemId={lastItemId} />);
   }
 
-  const onCloseOpenBook = () => {
+  const onOpenDetailSection = (todo: any) => {
+    setOpen(true);
+    setOsTilte('일정 상세');
+    setOsBody(<TodoDetail todo={todo}/>);
+  }
+
+  const onOpenRewriteSection = (todo: any) => {
+    setOpen(true);
+    setOsTilte('일정 수정');
+  }
+
+  const onCloseSection = () => {
     setOpen(false);
   }
 
-  const openBookViewProps = {
-    onTodoCreate,
-    lastItemId,
-    onCloseOpenBook,
+  const openSectionViewProps = {
+    osTitle,
+    osBody,
+    onCloseSection,
   }
 
-  const openBook = open 
-  ? <OpenSection {...openBookViewProps} />
+  const openSection = open 
+  ? <OpenSection {...openSectionViewProps} />
   : '';
 
 
   const todoListViewProps = {
     list,
-    onTodoRewrite,
+    onOpenRewriteSection,
     onTodoDelete,
     lastItemId,
-    onOpenBook,
+    onOpenInsertSection,
+    onOpenDetailSection,
   }
 
   return (
@@ -56,7 +74,7 @@ const TodoListIndex: React.FC = () => {
       <h1 className='header'>TodoList</h1>
       <div className='body'>
         <TodoList {...todoListViewProps}/> 
-        {openBook}
+        {openSection}
       </div>
       <div className='footer'>
       </div>

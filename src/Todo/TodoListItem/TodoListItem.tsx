@@ -11,9 +11,10 @@ interface IProps {
     content: string;
   }
   number?: number;
+  onOpenDetailSection?: (todo: any) => void;
   onTodoDelete: (todo:any) => void;
   onTodoRewrite: (todo:any) => void;
-  onOpenBook?: () => void;
+  onOpenInsertSection?: () => void;
 }
 
 const TodoListItem: React.FC<IProps> = (props) => {
@@ -25,14 +26,15 @@ const TodoListItem: React.FC<IProps> = (props) => {
       content: ''
     }, 
     number,
+    onOpenDetailSection,
     onTodoDelete,
     onTodoRewrite,
-    onOpenBook,
+    onOpenInsertSection,
   } = props;
 
   const idCheck = number 
     ? <span className='number'>{number}</span>
-    : (<div className='openbook-button'><FiPlusCircle onClick={onOpenBook} /></div>)
+    : (<div className='openbook-button'><FiPlusCircle onClick={onOpenInsertSection} /></div>)
 
   const buttonGroup = number
     ? (<span className='buttons'>
@@ -46,6 +48,7 @@ const TodoListItem: React.FC<IProps> = (props) => {
       todo={todo} 
       listId={idCheck} 
       buttonGroup={buttonGroup}
+      onOpenDetailSection={onOpenDetailSection}
     />
   )
 }

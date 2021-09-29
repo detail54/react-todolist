@@ -2,19 +2,19 @@ import React from 'react'
 import OpenSectionView from './OpenSectionView';
 
 interface IProps {
-  onTodoCreate: (todo:any) => void;
-  lastItemId: number;
-  onCloseOpenBook: () => void;
+  osTitle: string;
+  osBody: any;
+  onCloseSection: () => void;
 }
 
 const OpenSection: React.FC<IProps> = (props) => {
 
-  const { onTodoCreate, lastItemId, onCloseOpenBook } = props;
+  const { osTitle, osBody, onCloseSection } = props;
 
   const viewProps = {
-    onTodoCreate,
-    lastItemId,
-    onCloseOpenBook,
+    osTitle,
+    osBody,
+    onCloseSection,
   }
 
   return <OpenSectionView {...viewProps} />

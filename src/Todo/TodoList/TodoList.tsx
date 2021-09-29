@@ -1,25 +1,42 @@
-import React, { useState } from 'react'
+import React from 'react'
 import TodoListItem from '../TodoListItem/TodoListItem';
 import TodoListView from './TodoListView';
-import TodoListData from '../TodoListData';
 
 interface IProps {
   list: any[];
-  onTodoRewrite: (todo: any) => void;
-  onTodoDelete: (todo: any) => void;
   lastItemId: number;
-  onOpenBook: () => void;
+  onOpenInsertSection: () => void;
+  onOpenDetailSection: (todo: any) => void;
+  onOpenRewriteSection: (todo: any) => void;
+  onTodoDelete: (todo: any) => void;
 }
 
 const TodoList: React.FC<IProps> = (props) => {
 
-  const { list, onTodoRewrite, onTodoDelete, lastItemId, onOpenBook } = props;
+  const { 
+    list, 
+    lastItemId, 
+    onOpenInsertSection, 
+    onOpenDetailSection, 
+    onOpenRewriteSection, 
+    onTodoDelete 
+  } = props;
+
+  const todoAdd = (
+    <TodoListItem onTodoRewrite={onOpenRewriteSection} onTodoDelete={onTodoDelete} onOpenInsertSection={onOpenInsertSection}/>
+  );
 
   const data = list.length < 1
-    ? <TodoListItem onTodoRewrite={onTodoRewrite} onTodoDelete={onTodoDelete}/>
+    ? todoAdd
     : list.map((item, index) => (
-    <TodoListItem key={index} todo={item} number={index + 1} onTodoDelete={onTodoDelete} onTodoRewrite={onTodoRewrite} />
-  )).concat(<TodoListItem onTodoRewrite={onTodoRewrite} onTodoDelete={onTodoDelete} onOpenBook={onOpenBook} />);
+    <TodoListItem 
+      key={index} 
+      todo={item} 
+      number={index + 1} 
+      onOpenDetailSection={onOpenDetailSection}
+      onTodoDelete={onTodoDelete} 
+      onTodoRewrite={onOpenRewriteSection} />
+  )).concat(todoAdd);
 
   const viewProps = {
     data,
