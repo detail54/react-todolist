@@ -1,5 +1,6 @@
 import React from 'react'
 import { TodoInsertStyles } from './TodoInsert.styles';
+import Button from '../../common/Button/Button';
 
 interface IProps {
   title: string;
@@ -32,7 +33,7 @@ const TodoInsertView: React.FC<IProps> = (props) => {
           />
       </TodoInsertStyles.Content>
       <TodoInsertStyles.Footer>
-        <TodoInsertStyles.Button onClick={() => onSetTodo()}>Add</TodoInsertStyles.Button>
+        <Button onClick={() => onSetTodo()}>Add</Button>
       </TodoInsertStyles.Footer>
     </TodoInsertStyles.Root>
   )

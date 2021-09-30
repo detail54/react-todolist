@@ -4,7 +4,6 @@ import { FiPlusCircle } from "react-icons/fi";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { TodoListItemStyles } from './TodoListItem.styles';
 
-
 interface IProps {
   todo?: {
     id: number;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { TodoDetailStyles } from './TodoDetail.styles';
+import Button from '../../common/Button/Button';
 
 interface IProps {
   todo: {
@@ -26,7 +27,7 @@ const TodoDetailView: React.FC<IProps> = (props) => {
         {content}
       </TodoDetailStyles.Content>
       <TodoDetailStyles.Footer>
-        <TodoDetailStyles.Button onClick={() => onOpenRewriteSection(todo)}>Rewrite</TodoDetailStyles.Button>
+        <Button onClick={() => onOpenRewriteSection(todo)}>Rewrite</Button>
       </TodoDetailStyles.Footer>
     </TodoDetailStyles.Root>
   )

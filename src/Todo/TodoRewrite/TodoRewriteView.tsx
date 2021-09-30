@@ -1,5 +1,6 @@
 import React from 'react'
 import { TodoRewriteStyles } from './TodoRewrite.styles';
+import Button from '../../common/Button/Button';
 
 interface IProps {
   rewriteTodo: {
@@ -27,7 +28,7 @@ const TodoRewriteView: React.FC<IProps> = (props) => {
         <TodoRewriteStyles.TextArea value={rewriteTodo.content} onChange={(event) => onChangeContent(event.currentTarget.value)} />
       </TodoRewriteStyles.Content>
       <TodoRewriteStyles.Footer>
-        <TodoRewriteStyles.Button onClick={() => onTodoRewrite(rewriteTodo)}>Submit</TodoRewriteStyles.Button>
+        <Button onClick={() => onTodoRewrite(rewriteTodo)}>Submit</Button>
       </TodoRewriteStyles.Footer>
     </TodoRewriteStyles.Root>
   )
