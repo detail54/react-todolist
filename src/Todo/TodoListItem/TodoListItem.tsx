@@ -2,6 +2,7 @@ import React from 'react'
 import TodoListItemView from './TodoListItemView';
 import { FiPlusCircle } from "react-icons/fi";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
+import { TodoListItemStyles } from './TodoListItem.styles';
 
 
 interface IProps {
@@ -33,14 +34,14 @@ const TodoListItem: React.FC<IProps> = (props) => {
   } = props;
 
   const idCheck = number 
-    ? <span className='number'>{number}</span>
-    : (<div className='openbook-button'><FiPlusCircle onClick={onOpenInsertSection} /></div>)
+    ? <TodoListItemStyles.Number>{number}</TodoListItemStyles.Number>
+    : (<TodoListItemStyles.OpenButton><FiPlusCircle onClick={onOpenInsertSection} /></TodoListItemStyles.OpenButton>)
 
   const buttonGroup = number
-    ? (<span className='buttons'>
+    ? (<TodoListItemStyles.Buttons>
         <button onClick={() => onOpenRewriteSection(todo)}><FiEdit2 /></button>
         <button onClick={() => onTodoDelete(todo)}><FiTrash2 /></button>
-      </span>)
+      </TodoListItemStyles.Buttons>)
     : '';
 
   return (

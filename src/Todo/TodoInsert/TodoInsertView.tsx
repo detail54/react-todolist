@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoInsertStyles as Styled } from './TodoInsert.styles';
+import { TodoInsertStyles } from './TodoInsert.styles';
 
 interface IProps {
   title: string;
@@ -14,27 +14,27 @@ const TodoInsertView: React.FC<IProps> = (props) => {
   const { title, content, onSetTodo, onChangeTitle, onChangeContent } = props;
 
   return (
-    <Styled.TodoInsert>
-      <div className='insert-title-div'>
-        <input 
+    <TodoInsertStyles.Root>
+      <TodoInsertStyles.Title>
+        <TodoInsertStyles.Input 
           name='title' 
           onChange={(event) => onChangeTitle(event.currentTarget.value)} 
           value={title} 
           placeholder='Todo Title'
         />
-      </div>
-      <div className='insert-content-div'>
-        <textarea 
+      </TodoInsertStyles.Title>
+      <TodoInsertStyles.Content>
+        <TodoInsertStyles.TextArea 
           name='content' 
           onChange={(event) => onChangeContent(event.currentTarget.value)} 
           value={content} 
           placeholder='Todo Content'
           />
-      </div>
-      <div className='insert-button-div'>
-        <button onClick={() => onSetTodo()}>Add</button>
-      </div>
-    </Styled.TodoInsert>
+      </TodoInsertStyles.Content>
+      <TodoInsertStyles.Footer>
+        <TodoInsertStyles.Button onClick={() => onSetTodo()}>Add</TodoInsertStyles.Button>
+      </TodoInsertStyles.Footer>
+    </TodoInsertStyles.Root>
   )
 }
 

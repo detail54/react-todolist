@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoListItemStyles as Styled } from './TodoListItem.styles';
+import { TodoListItemStyles } from './TodoListItem.styles';
 
 interface IProps {
   todo: {
@@ -17,15 +17,15 @@ const TodoListItemView: React.FC<IProps> = (props) => {
   const { todo, listId, buttonGroup, onOpenDetailSection = () => {} } = props;
 
   return (
-    <Styled.TodoListItem>
-      <div>
+    <TodoListItemStyles.Root>
+      <TodoListItemStyles.Todo>
         {listId}
-        <span className='todo'>
+        <TodoListItemStyles.Title>
           <span onClick={() => onOpenDetailSection(todo)}>{todo.title}</span>
-        </span>
+        </TodoListItemStyles.Title>
         {buttonGroup}
-      </div>
-    </Styled.TodoListItem>
+      </TodoListItemStyles.Todo>
+    </TodoListItemStyles.Root>
   )
 }
 

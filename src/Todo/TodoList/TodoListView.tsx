@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoListStyles as Styled} from './TodoList.styles';
+import { TodoListStyles } from './TodoList.styles';
 
 interface IProps {
   data: any;
@@ -11,11 +11,11 @@ const TodoListView: React.FC<IProps> = (props) => {
 
   return (
     <>
-      <Styled.TodoList>
-        <div className='todo-list'>
+      <TodoListStyles.Root>
+        <TodoListStyles.List>
           {data}
-        </div>
-      </Styled.TodoList>
+        </TodoListStyles.List>
+      </TodoListStyles.Root>
     </>
   )
 }

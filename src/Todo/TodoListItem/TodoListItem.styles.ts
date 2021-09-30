@@ -1,12 +1,8 @@
 import Styled from 'styled-components';
 
-const TodoListItem = Styled.div`
+const Root = Styled.div`
   border-bottom: 1px dotted black;
   padding: 10px;
-
-  div {
-    display: flex;
-  }
 
   span {
     display: flex;
@@ -22,27 +18,39 @@ const TodoListItem = Styled.div`
   span:nth-child(3) {
     flex-grow: 0;
   }
+`;
 
-  .number {
-    color: white;
-    background-color: #d1cece;
-    width: 30px;
-    height: 30px;
-    margin: 0px;
-    border-radius: 100px;
-    justify-content: center;
-    cursor: auto;
-  }
+const Todo = Styled.div`
+  display: flex;
+`;
 
-  .todo {
-    margin-left: 5px;
-  }
+const Number = Styled.span`
+  color: white;
+  background-color: #d1cece;
+  width: 30px;
+  height: 30px;
+  margin: 0px;
+  border-radius: 100px;
+  justify-content: center;
+  cursor: auto;
+`;
 
-  .todo span {
+const Title = Styled.span`
+  margin-left: 5px;
+
+  span {
     cursor: pointer;
   }
+`;
 
-  .buttons button{
+const OpenButton = Styled.div`
+  cursor: pointer;
+  font-size: 26px;
+`;
+
+const Buttons = Styled.span`
+
+  button {
     margin-left: 5px;
     background: none;
     border: none;
@@ -52,14 +60,13 @@ const TodoListItem = Styled.div`
     align-items: center;
     justify-content: center;
   }
-
-  .openbook-button {
-    cursor: pointer;
-    font-size: 26px;
-  }
 `;
 
 export const TodoListItemStyles = {
-  TodoListItem,
-  
+  Root,
+  Todo,
+  Number,
+  Title,
+  OpenButton,
+  Buttons
 }

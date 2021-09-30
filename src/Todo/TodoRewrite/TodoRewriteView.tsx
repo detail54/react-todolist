@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoRewriteStyles as Styled } from './TodoRewrite.styles';
+import { TodoRewriteStyles } from './TodoRewrite.styles';
 
 interface IProps {
   rewriteTodo: {
@@ -17,19 +17,19 @@ const TodoRewriteView: React.FC<IProps> = (props) => {
   const { rewriteTodo, onChangeTitle, onChangeContent, onTodoRewrite } = props;
 
   return (
-    <Styled.TodoRewrite>
-      <h2>할 일</h2>
-      <div className='rewrite-title'>
-        <input value={rewriteTodo.title} onChange={(event) => onChangeTitle(event.currentTarget.value)} />
-      </div>
-      <h2>내용</h2>
-      <div className='rewrite-content'>
-        <textarea value={rewriteTodo.content} onChange={(event) => onChangeContent(event.currentTarget.value)} />
-      </div>
-      <div className='rewrite-button-div'>
-        <button onClick={() => onTodoRewrite(rewriteTodo)}>Submit</button>
-      </div>
-    </Styled.TodoRewrite>
+    <TodoRewriteStyles.Root>
+      <TodoRewriteStyles.Header>할 일</TodoRewriteStyles.Header>
+      <TodoRewriteStyles.Title>
+        <TodoRewriteStyles.Input value={rewriteTodo.title} onChange={(event) => onChangeTitle(event.currentTarget.value)} />
+      </TodoRewriteStyles.Title>
+      <TodoRewriteStyles.Header>내용</TodoRewriteStyles.Header>
+      <TodoRewriteStyles.Content>
+        <TodoRewriteStyles.TextArea value={rewriteTodo.content} onChange={(event) => onChangeContent(event.currentTarget.value)} />
+      </TodoRewriteStyles.Content>
+      <TodoRewriteStyles.Footer>
+        <TodoRewriteStyles.Button onClick={() => onTodoRewrite(rewriteTodo)}>Submit</TodoRewriteStyles.Button>
+      </TodoRewriteStyles.Footer>
+    </TodoRewriteStyles.Root>
   )
 }
 

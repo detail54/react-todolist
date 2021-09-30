@@ -1,5 +1,5 @@
 import React from 'react'
-import { TodoDetailStyles as Styled } from './TodoDetail.styles';
+import { TodoDetailStyles } from './TodoDetail.styles';
 
 interface IProps {
   todo: {
@@ -16,19 +16,19 @@ const TodoDetailView: React.FC<IProps> = (props) => {
   const { todo, content, onOpenRewriteSection } = props;
 
   return (
-    <Styled.TodoDetail>
-      <h2>할 일</h2>
-      <div className='detail-header'>
+    <TodoDetailStyles.Root>
+      <TodoDetailStyles.Header>할 일</TodoDetailStyles.Header>
+      <TodoDetailStyles.Title>
         {todo.title}
-      </div>
-      <h2>내용</h2>
-      <div className='detail-body'>
+      </TodoDetailStyles.Title>
+      <TodoDetailStyles.Header>내용</TodoDetailStyles.Header>
+      <TodoDetailStyles.Content>
         {content}
-      </div>
-      <div className='detail-button-div'>
-        <button onClick={() => onOpenRewriteSection(todo)}>Rewrite</button>
-      </div>
-    </Styled.TodoDetail>
+      </TodoDetailStyles.Content>
+      <TodoDetailStyles.Footer>
+        <TodoDetailStyles.Button onClick={() => onOpenRewriteSection(todo)}>Rewrite</TodoDetailStyles.Button>
+      </TodoDetailStyles.Footer>
+    </TodoDetailStyles.Root>
   )
 }
 
