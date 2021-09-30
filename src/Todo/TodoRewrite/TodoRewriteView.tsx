@@ -1,6 +1,7 @@
 import React from 'react'
 import { TodoRewriteStyles } from './TodoRewrite.styles';
 import Button from '../../common/Button/Button';
+import Input from '../../common/Input/Input';
 
 interface IProps {
   rewriteTodo: {
@@ -21,7 +22,7 @@ const TodoRewriteView: React.FC<IProps> = (props) => {
     <TodoRewriteStyles.Root>
       <TodoRewriteStyles.Header>할 일</TodoRewriteStyles.Header>
       <TodoRewriteStyles.Title>
-        <TodoRewriteStyles.Input value={rewriteTodo.title} onChange={(event) => onChangeTitle(event.currentTarget.value)} />
+        <Input value={rewriteTodo.title} onChange={(event) => onChangeTitle(event.currentTarget.value)} />
       </TodoRewriteStyles.Title>
       <TodoRewriteStyles.Header>내용</TodoRewriteStyles.Header>
       <TodoRewriteStyles.Content>

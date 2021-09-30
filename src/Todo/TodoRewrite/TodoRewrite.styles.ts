@@ -61,23 +61,6 @@ const Footer = Styled.div`
   align-items: center;
 `;
 
-const Button = Styled.button`
-  border: none;
-  background: #d1cece;
-  color: white;
-  font-size: 25px;
-  padding: 2px 10px 2px 10px;
-  cursor: pointer;
-
-  &:focus {
-    border: none;
-  }
-
-  &:hover {
-    border: 2px solid white;
-  }
-`;
-
 export const TodoRewriteStyles = {
   Root,
   Header,
@@ -86,5 +69,4 @@ export const TodoRewriteStyles = {
   Content,
   TextArea,
   Footer,
-  Button
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { TodoInsertStyles } from './TodoInsert.styles';
 import Button from '../../common/Button/Button';
+import Input from '../../common/Input/Input';
 
 interface IProps {
   title: string;
@@ -17,7 +18,7 @@ const TodoInsertView: React.FC<IProps> = (props) => {
   return (
     <TodoInsertStyles.Root>
       <TodoInsertStyles.Title>
-        <TodoInsertStyles.Input 
+        <Input 
           name='title' 
           onChange={(event) => onChangeTitle(event.currentTarget.value)} 
           value={title} 
