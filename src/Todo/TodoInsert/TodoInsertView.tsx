@@ -2,6 +2,7 @@ import React from 'react'
 import { TodoInsertStyles } from './TodoInsert.styles';
 import Button from '../../common/Button/Button';
 import Input from '../../common/Input/Input';
+import TextArea from '../../common/TextArea/TextArea';
 
 interface IProps {
   title: string;
@@ -26,7 +27,7 @@ const TodoInsertView: React.FC<IProps> = (props) => {
         />
       </TodoInsertStyles.Title>
       <TodoInsertStyles.Content>
-        <TodoInsertStyles.TextArea 
+        <TextArea 
           name='content' 
           onChange={(event) => onChangeContent(event.currentTarget.value)} 
           value={content} 

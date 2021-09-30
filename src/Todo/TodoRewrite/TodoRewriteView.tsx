@@ -2,6 +2,7 @@ import React from 'react'
 import { TodoRewriteStyles } from './TodoRewrite.styles';
 import Button from '../../common/Button/Button';
 import Input from '../../common/Input/Input';
+import TextArea from '../../common/TextArea/TextArea';
 
 interface IProps {
   rewriteTodo: {
@@ -22,11 +23,19 @@ const TodoRewriteView: React.FC<IProps> = (props) => {
     <TodoRewriteStyles.Root>
       <TodoRewriteStyles.Header>할 일</TodoRewriteStyles.Header>
       <TodoRewriteStyles.Title>
-        <Input value={rewriteTodo.title} onChange={(event) => onChangeTitle(event.currentTarget.value)} />
+        <Input 
+          name='title'
+          value={rewriteTodo.title} 
+          onChange={(event) => onChangeTitle(event.currentTarget.value)} 
+        />
       </TodoRewriteStyles.Title>
       <TodoRewriteStyles.Header>내용</TodoRewriteStyles.Header>
       <TodoRewriteStyles.Content>
-        <TodoRewriteStyles.TextArea value={rewriteTodo.content} onChange={(event) => onChangeContent(event.currentTarget.value)} />
+        <TextArea 
+          name='content'
+          value={rewriteTodo.content} 
+          onChange={(event) => onChangeContent(event.currentTarget.value)} 
+        />
       </TodoRewriteStyles.Content>
       <TodoRewriteStyles.Footer>
         <Button onClick={() => onTodoRewrite(rewriteTodo)}>Submit</Button>
