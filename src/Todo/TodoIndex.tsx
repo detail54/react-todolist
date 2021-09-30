@@ -15,13 +15,13 @@ const TodoListIndex: React.FC = () => {
 
   const lastItemId = list.length < 1 ? 0 : list[list.length - 1].id;
 
-  const onTodoCreate = (todo: any) => {
+  const onTodoInsert = (todo: any) => {
     setList(list.concat(todo));
   }
 
   const onOpenInsertSection = () => {
     setOsTilte('Todo Add');
-    setOsBody(<TodoInsert onTodoCreate={onTodoCreate} lastItemId={lastItemId} />);
+    setOsBody(<TodoInsert onTodoInsert={onTodoInsert} lastItemId={lastItemId} />);
     setOpen(true);
   }
 

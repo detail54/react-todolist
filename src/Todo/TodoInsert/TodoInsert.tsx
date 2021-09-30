@@ -3,7 +3,7 @@ import TodoInsertView from './TodoInsertView';
 
 interface IProps {
   lastItemId: number;
-  onTodoCreate: (todo: any) => void;
+  onTodoInsert: (todo: any) => void;
 }
 
 interface ITodo {
@@ -14,13 +14,13 @@ interface ITodo {
 
 const TodoInsert: React.FC<IProps> = (props) => {
 
-  const { lastItemId, onTodoCreate } = props;
+  const { lastItemId, onTodoInsert } = props;
 
   const [ todo, setTodo ] = useState<ITodo>({id: 0, title: '', content: ''});
 
   const onSetTodo = () => {
     if (todo.title !== ''){
-      onTodoCreate({...todo, id: lastItemId + 1});
+      onTodoInsert({...todo, id: lastItemId + 1});
       setTodo({id:0, title: '', content: ''})
     }
   }
