@@ -1,5 +1,5 @@
 import React from 'react'
-import { OpenSectionStyles as Styled } from './OpenSection.styles';
+import { OpenSectionStyles } from './OpenSection.styles';
 import { FiXCircle } from "react-icons/fi";
 
 
@@ -14,17 +14,17 @@ const OpenSectionView: React.FC<IProps> = (props) => {
   const { osTitle, osBody, onCloseSection } = props;
 
   return (
-    <Styled.OpenSection>
-      <div className='open-section-close-button-div'>
+    <OpenSectionStyles.Root>
+      <OpenSectionStyles.CloseButtonDiv>
         <button onClick={onCloseSection}><FiXCircle /></button>
-      </div>
-      <h1 className='open-section-header'>
-        <span>{osTitle}</span>
-      </h1>
-      <div className='open-section-body'>
+      </OpenSectionStyles.CloseButtonDiv>
+      <OpenSectionStyles.Header>
+        <OpenSectionStyles.OSTitle>{osTitle}</OpenSectionStyles.OSTitle>
+      </OpenSectionStyles.Header>
+      <OpenSectionStyles.OSBody className='open-section-body'>
         {osBody}
-      </div>
-    </Styled.OpenSection>
+      </OpenSectionStyles.OSBody>
+    </OpenSectionStyles.Root>
   )
 }
 
