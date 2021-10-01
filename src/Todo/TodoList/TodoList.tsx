@@ -21,27 +21,27 @@ const TodoList: React.FC<IProps> = (props) => {
     onOpenRewriteSection, 
     onTodoDelete 
   } = props;
-  console.log(list)
 
   const todoAdd = (key: number) => (
     <TodoListItem 
       key={key}
       onOpenRewriteSection={onOpenRewriteSection} 
       onTodoDelete={onTodoDelete} 
-      onOpenInsertSection={onOpenInsertSection}/>
+      onOpenInsertSection={onOpenInsertSection}
+    />
   );
 
   const data = list.length < 1
     ? todoAdd(0)
     : list.map((item, index) => (
-    <TodoListItem 
-      key={item.id} 
-      todo={item} 
-      number={index + 1} 
-      onOpenDetailSection={onOpenDetailSection}
-      onTodoDelete={onTodoDelete} 
-      onOpenRewriteSection={onOpenRewriteSection} />
-  )).concat(todoAdd(list.length + 1));
+      <TodoListItem 
+        key={item.id} 
+        todo={item} 
+        number={index + 1} 
+        onOpenDetailSection={onOpenDetailSection}
+        onTodoDelete={onTodoDelete} 
+        onOpenRewriteSection={onOpenRewriteSection} />
+    )).concat(todoAdd(list.length + 1));
 
   const viewProps = {
     data,
