@@ -13,7 +13,6 @@ interface IProps {
 }
 
 const TodoList: React.FC<IProps> = (props) => {
-
   const { 
     list, 
     lastItemId, 
@@ -22,6 +21,7 @@ const TodoList: React.FC<IProps> = (props) => {
     onOpenRewriteSection, 
     onTodoDelete 
   } = props;
+  console.log(list)
 
   const todoAdd = (key: number) => (
     <TodoListItem 
@@ -41,7 +41,7 @@ const TodoList: React.FC<IProps> = (props) => {
       onOpenDetailSection={onOpenDetailSection}
       onTodoDelete={onTodoDelete} 
       onOpenRewriteSection={onOpenRewriteSection} />
-  )).concat(todoAdd(list.length));
+  )).concat(todoAdd(list.length + 1));
 
   const viewProps = {
     data,

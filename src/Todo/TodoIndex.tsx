@@ -20,7 +20,7 @@ const TodoListIndex: React.FC = () => {
 
   const lastItemId: number = list.length < 1 ? 0 : list[list.length - 1].id;
 
-  const onTodoInsert = (todo: any) => {
+  const onTodoInsert = (todo: IListItem) => {
     setList(list.concat(todo));
   }
 
@@ -30,13 +30,13 @@ const TodoListIndex: React.FC = () => {
     setOpen(true);
   }
 
-  const onOpenDetailSection = (todo: any) => {
+  const onOpenDetailSection = (todo: IListItem) => {
     setOsTilte('Todo Detail');
     setOsBody(<TodoDetail todo={todo} onOpenRewriteSection={onOpenRewriteSection} />);
     setOpen(true);
   }
 
-  const onTodoRewrite = (todo: any) => {
+  const onTodoRewrite = (todo: IListItem) => {
     const listCopy = [...list];
     const index = listCopy.find(listCopy => listCopy.id === todo.id);
     listCopy.splice(index ? index.id - 1 : 0, 1, todo);
@@ -45,14 +45,14 @@ const TodoListIndex: React.FC = () => {
     onOpenDetailSection(todo);
   }
 
-  const onOpenRewriteSection = (todo: any) => {
+  const onOpenRewriteSection = (todo: IListItem) => {
     setOsTilte('Todo Rewrite');
     setOsBody(<TodoRewrite todo={todo} onTodoRewrite={onTodoRewrite}/>);
     setOpen(true);
   }
 
-  const onTodoDelete = (todo: any) => {
-    setList(list.filter((list: { id: number; }) => list.id !== todo.id))
+  const onTodoDelete = (todo: IListItem) => {
+    setList(list.filter((list: { id: number; }) => list.id !== todo.id));
   }
 
   const onCloseSection = () => {

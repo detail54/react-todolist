@@ -8,7 +8,7 @@ interface IProps {
 const TodoListView: React.FC<IProps> = (props) => {
 
   const { data } = props;
-
+console.log(data)
   return (
     <>
       <TodoListStyles.Root>
