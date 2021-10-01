@@ -1,12 +1,9 @@
 import React from 'react'
 import TodoDetailView from './TodoDetailView';
+import { IListItem } from '../interface';
 
 interface IProps {
-  todo: {
-    id: number;
-    title: string;
-    content: string;
-  };
+  todo: IListItem;
   onOpenRewriteSection: (todo: any) => void;
 }
 

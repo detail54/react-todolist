@@ -2,7 +2,7 @@ import React from 'react'
 import { TodoListStyles } from './TodoList.styles';
 
 interface IProps {
-  data: any;
+  data: JSX.Element | JSX.Element[];
 }
 
 const TodoListView: React.FC<IProps> = (props) => {

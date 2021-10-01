@@ -1,10 +1,11 @@
 import React from 'react'
 import { TodoIndexStyles } from './TodoIndex.styles';
 import TodoList from './TodoList/TodoList';
+import { ITodoListViewProps } from './interface';
 
 interface IProps {
-  todoListViewProps: any;
-  openSection: any;
+  todoListViewProps: ITodoListViewProps;
+  openSection: JSX.Element | string;
 }
 
 const TodoIndexView: React.FC<IProps> = (props) => {

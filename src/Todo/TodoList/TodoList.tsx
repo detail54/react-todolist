@@ -1,14 +1,15 @@
 import React from 'react'
 import TodoListItem from '../TodoListItem/TodoListItem';
 import TodoListView from './TodoListView';
+import { IListItem } from '../interface';
 
 interface IProps {
-  list: any[];
+  list: IListItem[];
   lastItemId: number;
   onOpenInsertSection: () => void;
-  onOpenDetailSection: (todo: any) => void;
-  onOpenRewriteSection: (todo: any) => void;
-  onTodoDelete: (todo: any) => void;
+  onOpenDetailSection: (todo: IListItem) => void;
+  onOpenRewriteSection: (todo: IListItem) => void;
+  onTodoDelete: (todo: IListItem) => void;
 }
 
 const TodoList: React.FC<IProps> = (props) => {

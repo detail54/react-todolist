@@ -5,7 +5,7 @@ import { FiXCircle } from "react-icons/fi";
 
 interface IProps {
   osTitle: string;
-  osBody: any;
+  osBody: JSX.Element | string;
   onCloseSection: () => void;
 }
 

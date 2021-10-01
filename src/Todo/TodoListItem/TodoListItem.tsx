@@ -3,17 +3,14 @@ import TodoListItemView from './TodoListItemView';
 import { FiPlusCircle } from "react-icons/fi";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { TodoListItemStyles } from './TodoListItem.styles';
+import { IListItem } from '../interface';
 
 interface IProps {
-  todo?: {
-    id: number;
-    title: string;
-    content: string;
-  }
+  todo?: IListItem;
   number?: number;
-  onOpenDetailSection?: (todo: any) => void;
-  onTodoDelete: (todo:any) => void;
-  onOpenRewriteSection: (todo:any) => void;
+  onOpenDetailSection?: (todo: IListItem) => void;
+  onTodoDelete: (todo: IListItem) => void;
+  onOpenRewriteSection: (todo: IListItem) => void;
   onOpenInsertSection?: () => void;
 }
 

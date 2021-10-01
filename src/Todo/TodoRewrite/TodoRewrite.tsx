@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import TodoRewriteView from './TodoRewriteView'
+import { IListItem } from '../interface';
 
 interface IProps {
-  todo: {
-    id: number;
-    title: string;
-    content: string;
-  };
-  onTodoRewrite: (todo: any) => void;
+  todo: IListItem;
+  onTodoRewrite: (todo: IListItem) => void;
 }
 
 const TodoRewrite: React.FC<IProps> = (props) => {

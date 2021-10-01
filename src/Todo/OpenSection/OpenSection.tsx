@@ -3,7 +3,7 @@ import OpenSectionView from './OpenSectionView';
 
 interface IProps {
   osTitle: string;
-  osBody: any;
+  osBody: JSX.Element | string;
   onCloseSection: () => void;
 }
 

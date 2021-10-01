@@ -4,7 +4,7 @@ import { InputStyle } from './Input.styles';
 interface IProps {
   name?: string;
   value?: string;
-  onChange?: (event: any) => void;
+  onChange?: (event: any) => any;
   placeholder?: string;
 }
 

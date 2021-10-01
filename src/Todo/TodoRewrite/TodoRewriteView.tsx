@@ -3,16 +3,13 @@ import { TodoRewriteStyles } from './TodoRewrite.styles';
 import Button from '../../common/Button/Button';
 import Input from '../../common/Input/Input';
 import TextArea from '../../common/TextArea/TextArea';
+import { IListItem } from '../interface';
 
 interface IProps {
-  rewriteTodo: {
-    id: number;
-    title: string;
-    content: string;
-  };
+  rewriteTodo: IListItem;
   onChangeTitle: (text: string) => void;
   onChangeContent: (text: string) => void;
-  onTodoRewrite: (todo: any) => void;
+  onTodoRewrite: (todo: IListItem) => void;
 }
 
 const TodoRewriteView: React.FC<IProps> = (props) => {

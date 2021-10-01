@@ -5,19 +5,20 @@ import TodoInsert from './TodoInsert/TodoInsert';
 import TodoDetail from './TodeDetail/TodoDetail';
 import TodoRewrite from './TodoRewrite/TodoRewrite';
 import TodoIndexView from './TodoIndexView';
+import { IListItem } from './interface';
 
 const TodoListIndex: React.FC = () => {
 
-  const [ open, setOpen ] = useState(false);
-  const [ list, setList ] = useState(() => JSON.parse(localStorage.getItem('list') || '') || TodoListData);
-  const [ osTitle, setOsTilte ] = useState('');
-  const [ osBody, setOsBody ] = useState(<></>);
+  const [ open, setOpen ] = useState<boolean>(false);
+  const [ list, setList ] = useState<IListItem[]>(() => JSON.parse(localStorage.getItem('list') || '') || TodoListData);
+  const [ osTitle, setOsTilte ] = useState<string>('');
+  const [ osBody, setOsBody ] = useState<JSX.Element>(<></>);
 
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(list));
   }, [list]);
 
-  const lastItemId = list.length < 1 ? 0 : list[list.length - 1].id;
+  const lastItemId: number = list.length < 1 ? 0 : list[list.length - 1].id;
 
   const onTodoInsert = (todo: any) => {
     setList(list.concat(todo));
@@ -51,7 +52,7 @@ const TodoListIndex: React.FC = () => {
   }
 
   const onTodoDelete = (todo: any) => {
-    setList(list.filter((list: { id: any; }) => list.id !== todo.id))
+    setList(list.filter((list: { id: number; }) => list.id !== todo.id))
   }
 
   const onCloseSection = () => {
@@ -86,7 +87,3 @@ const TodoListIndex: React.FC = () => {
 }
 
 export default TodoListIndex
-function key(key: any): string {
-  throw new Error('Function not implemented.');
-}
-

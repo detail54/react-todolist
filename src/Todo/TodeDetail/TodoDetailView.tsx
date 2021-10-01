@@ -1,13 +1,10 @@
 import React from 'react'
 import { TodoDetailStyles } from './TodoDetail.styles';
 import Button from '../../common/Button/Button';
+import { IListItem } from '../interface';
 
 interface IProps {
-  todo: {
-    id: number;
-    title: string;
-    content: string;
-  };
+  todo: IListItem;
   content: any;
   onOpenRewriteSection: (todo: any) => void;
 } 
