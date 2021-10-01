@@ -6,13 +6,16 @@ import TodoDetail from './TodeDetail/TodoDetail';
 import TodoRewrite from './TodoRewrite/TodoRewrite';
 import TodoIndexView from './TodoIndexView';
 
-
 const TodoListIndex: React.FC = () => {
 
   const [ open, setOpen ] = useState(false);
-  const [ list, setList ] = useState(TodoListData);
+  const [ list, setList ] = useState(() => JSON.parse(localStorage.getItem('list') || '') || TodoListData);
   const [ osTitle, setOsTilte ] = useState('');
   const [ osBody, setOsBody ] = useState(<></>);
+
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(list));
+  }, [list]);
 
   const lastItemId = list.length < 1 ? 0 : list[list.length - 1].id;
 
@@ -48,7 +51,7 @@ const TodoListIndex: React.FC = () => {
   }
 
   const onTodoDelete = (todo: any) => {
-    setList(list.filter(list => list.id !== todo.id))
+    setList(list.filter((list: { id: any; }) => list.id !== todo.id))
   }
 
   const onCloseSection = () => {
@@ -83,3 +86,7 @@ const TodoListIndex: React.FC = () => {
 }
 
 export default TodoListIndex
+function key(key: any): string {
+  throw new Error('Function not implemented.');
+}
+
