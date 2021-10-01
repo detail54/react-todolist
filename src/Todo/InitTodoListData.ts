@@ -1,4 +1,4 @@
-const TodoListData = [
+const InitTodoListData = [
   {
     id: 1,
     title: 'work1',
@@ -22,4 +22,4 @@ const TodoListData = [
 ];
 
 
-export default TodoListData;
+export default InitTodoListData;

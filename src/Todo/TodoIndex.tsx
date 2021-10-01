@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import OpenSection from './OpenSection/OpenSection';
-import TodoListData from './TodoListData';
+import InitTodoListData from './InitTodoListData';
 import TodoInsert from './TodoInsert/TodoInsert';
 import TodoDetail from './TodeDetail/TodoDetail';
 import TodoRewrite from './TodoRewrite/TodoRewrite';
@@ -10,7 +10,7 @@ import { IListItem } from './interface';
 const TodoListIndex: React.FC = () => {
 
   const [ open, setOpen ] = useState<boolean>(false);
-  const [ list, setList ] = useState<IListItem[]>(() => JSON.parse(localStorage.getItem('list') || '') || TodoListData);
+  const [ list, setList ] = useState<IListItem[]>(() => JSON.parse(localStorage.getItem('list') || '') || InitTodoListData);
   const [ osTitle, setOsTilte ] = useState<string>('');
   const [ osBody, setOsBody ] = useState<JSX.Element>(<></>);
 
