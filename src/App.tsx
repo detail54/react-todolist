@@ -1,12 +1,12 @@
-import './App.css';
-import TodoIndex from './Todo/TodoIndex';
+import './App.css'
+import TodoIndex from './Todo/TodoIndex'
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <TodoIndex />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,30 +1,29 @@
 import React, { useState } from 'react'
-import TodoInsertView from './TodoInsertView';
-import { IListItem } from '../interface';
+import TodoInsertView from './TodoInsertView'
+import { IListItem } from '../interface'
 
 interface IProps {
-  lastItemId: number;
-  onTodoInsert: (todo: any) => void;
+  lastItemId: number
+  onTodoInsert: (todo: any) => void
 }
 
 const TodoInsert: React.FC<IProps> = (props) => {
+  const { lastItemId, onTodoInsert } = props
 
-  const { lastItemId, onTodoInsert } = props;
-
-  const [ todo, setTodo ] = useState<IListItem>({id: 0, title: '', content: ''});
+  const [todo, setTodo] = useState<IListItem>({ id: 0, title: '', content: '' })
 
   const onSetTodo = () => {
-    if (todo.title !== ''){
-      onTodoInsert({...todo, id: lastItemId + 1});
-      setTodo({id:0, title: '', content: ''})
+    if (todo.title !== '') {
+      onTodoInsert({ ...todo, id: lastItemId + 1 })
+      setTodo({ id: 0, title: '', content: '' })
     }
   }
 
   const onChangeTitle = (text: string) => {
-    setTodo({...todo, title: text});
+    setTodo({ ...todo, title: text })
   }
   const onChangeContent = (text: string) => {
-    setTodo({...todo, content: text});
+    setTodo({ ...todo, content: text })
   }
 
   const viewProps = {

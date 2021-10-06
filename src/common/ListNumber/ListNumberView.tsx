@@ -6,14 +6,9 @@ interface IProps {
 }
 
 const ListNumberView: React.FC<IProps> = (props) => {
-
   const { number } = props
 
-  return (
-    <ListNumberStyles.Number>
-      {number}
-    </ListNumberStyles.Number>
-  )
+  return <ListNumberStyles.Span>{number}</ListNumberStyles.Span>
 }
 
 export default ListNumberView

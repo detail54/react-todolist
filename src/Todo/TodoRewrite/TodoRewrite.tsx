@@ -1,35 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import TodoRewriteView from './TodoRewriteView'
-import { IListItem } from '../interface';
+import { IListItem } from '../interface'
 
 interface IProps {
-  todo: IListItem;
-  onTodoRewrite: (todo: IListItem) => void;
+  todo: IListItem
+  onTodoRewrite: (todo: IListItem) => void
 }
 
 const TodoRewrite: React.FC<IProps> = (props) => {
+  const { todo, onTodoRewrite } = props
 
-  const { todo, onTodoRewrite } = props; 
-
-  const [ rewriteTodo, setRewriteTodo ] = useState({id: 0, title: '', content: ''});
+  const [rewriteTodo, setRewriteTodo] = useState({
+    id: 0,
+    title: '',
+    content: '',
+  })
 
   useEffect(() => {
-    setRewriteTodo({...todo});
+    setRewriteTodo({ ...todo })
   }, [todo])
 
   const onChangeTitle = (text: string) => {
-    setRewriteTodo({...rewriteTodo, title: text});
+    setRewriteTodo({ ...rewriteTodo, title: text })
   }
 
   const onChangeContent = (text: string) => {
-    setRewriteTodo({...rewriteTodo, content: text});
+    setRewriteTodo({ ...rewriteTodo, content: text })
   }
 
   const viewProps = {
     rewriteTodo,
     onChangeTitle,
     onChangeContent,
-    onTodoRewrite
+    onTodoRewrite,
   }
 
   return <TodoRewriteView {...viewProps} />

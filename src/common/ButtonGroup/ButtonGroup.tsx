@@ -6,7 +6,6 @@ interface IProps {
 }
 
 const ButtonGroup: React.FC<IProps> = (props) => {
-
   const { buttons } = props
 
   return <ButtonGroupView buttons={buttons} />

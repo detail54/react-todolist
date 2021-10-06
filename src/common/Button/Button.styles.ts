@@ -1,6 +1,6 @@
-import Styled from 'styled-components';
+import Styled from 'styled-components'
 
-export const ButtonStyle = Styled.button`
+export const Button = Styled.button`
   border: none;
   background: #d1cece;
   color: white;
@@ -15,4 +15,8 @@ export const ButtonStyle = Styled.button`
   &:hover {
     border: 2px solid white;
   }
-`;
+`
+
+export const ButtonStyles = {
+  Button,
+}

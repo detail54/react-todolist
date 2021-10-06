@@ -6,7 +6,6 @@ interface IProps {
 }
 
 const AddButton: React.FC<IProps> = (props) => {
-
   const { onClick } = props
 
   return <AddButtonView onClick={onClick} />

@@ -1,6 +1,6 @@
-import Styled from "styled-components";
+import Styled from 'styled-components'
 
-export const TextAreaStyle = Styled.textarea`
+export const TextArea = Styled.textarea`
   width: 99%;
   height: 315px;
   background: white;
@@ -15,4 +15,8 @@ export const TextAreaStyle = Styled.textarea`
   &::placeholder {
     color: #d9d9d9;
   }
-`;
+`
+
+export const TextAreaStyles = {
+  TextArea,
+}

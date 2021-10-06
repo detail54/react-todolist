@@ -1,16 +1,19 @@
-import React from 'react';
-import { ButtonStyle } from './Button.styles';
+import React from 'react'
+import { ButtonStyles } from './Button.styles'
 
 interface IProps {
-  onClick: Function;
-  children: any;
+  onClick: Function
+  children: any
 }
 
 const ButtonView: React.FC<IProps> = (props) => {
+  const { onClick, children } = props
 
-  const { onClick, children } = props;
-
-  return <ButtonStyle onClick={() => onClick()}>{children}</ButtonStyle>
+  return (
+    <ButtonStyles.Button onClick={() => onClick()}>
+      {children}
+    </ButtonStyles.Button>
+  )
 }
 
 export default ButtonView

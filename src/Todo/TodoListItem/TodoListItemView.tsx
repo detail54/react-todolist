@@ -1,17 +1,16 @@
 import React from 'react'
-import { TodoListItemStyles } from './TodoListItem.styles';
-import { IListItem } from '../interface';
+import { TodoListItemStyles } from './TodoListItem.styles'
+import { IListItem } from '../interface'
 
 interface IProps {
-  todo: IListItem;
-  listId: JSX.Element;
-  buttonGroup: JSX.Element | "";
-  onOpenDetailSection?: (todo: IListItem) => void;
+  todo: IListItem
+  listId: JSX.Element
+  buttonGroup: JSX.Element | ''
+  onOpenDetailSection?: (todo: IListItem) => void
 }
 
 const TodoListItemView: React.FC<IProps> = (props) => {
-
-  const { todo, listId, buttonGroup, onOpenDetailSection = () => {} } = props;
+  const { todo, listId, buttonGroup, onOpenDetailSection = () => {} } = props
 
   return (
     <TodoListItemStyles.Root>

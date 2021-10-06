@@ -1,6 +1,6 @@
 import Styled from 'styled-components'
 
-const Number = Styled.span`
+const Span = Styled.span`
   color: white;
   background-color: #d1cece;
   width: 30px;
@@ -12,5 +12,5 @@ const Number = Styled.span`
 `
 
 export const ListNumberStyles = {
-  Number
+  Span,
 }

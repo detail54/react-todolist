@@ -1,22 +1,23 @@
 import React from 'react'
-import { OpenSectionStyles } from './OpenSection.styles';
-import { FiXCircle } from "react-icons/fi";
-
+import { OpenSectionStyles } from './OpenSection.styles'
+import { FiXCircle } from 'react-icons/fi'
+import Button from '../../common/Button/Button'
 
 interface IProps {
-  osTitle: string;
-  osBody: JSX.Element | string;
-  onCloseSection: () => void;
+  osTitle: string
+  osBody: JSX.Element | string
+  onCloseSection: () => void
 }
 
 const OpenSectionView: React.FC<IProps> = (props) => {
-
-  const { osTitle, osBody, onCloseSection } = props;
+  const { osTitle, osBody, onCloseSection } = props
 
   return (
     <OpenSectionStyles.Root>
       <OpenSectionStyles.CloseButtonDiv>
-        <button onClick={onCloseSection}><FiXCircle /></button>
+        <Button onClick={onCloseSection}>
+          <FiXCircle />
+        </Button>
       </OpenSectionStyles.CloseButtonDiv>
       <OpenSectionStyles.Header>
         <OpenSectionStyles.OSTitle>{osTitle}</OpenSectionStyles.OSTitle>

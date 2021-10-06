@@ -6,14 +6,9 @@ interface IProps {
 }
 
 const ButtonGroupView: React.FC<IProps> = (props) => {
-
   const { buttons } = props
 
-  return (
-    <ButtonGroupStyles.Span>
-      {buttons}
-    </ButtonGroupStyles.Span>
-  )
+  return <ButtonGroupStyles.Span>{buttons}</ButtonGroupStyles.Span>
 }
 
 export default ButtonGroupView

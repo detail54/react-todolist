@@ -6,13 +6,13 @@ const Root = Styled.div`
   max-height: 700px;
   border-left: 3px dashed gray;
   border-right: 3px dashed gray;
-`;
+`
 
 const List = Styled.div`
   height: 516px;
-`;
+`
 
 export const TodoListStyles = {
   Root,
-  List
+  List,
 }

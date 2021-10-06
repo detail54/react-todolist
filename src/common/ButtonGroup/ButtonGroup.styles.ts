@@ -16,5 +16,5 @@ const Span = Styled.span`
 `
 
 export const ButtonGroupStyles = {
-  Span
+  Span,
 }

@@ -6,5 +6,5 @@ const Div = Styled.div`
 `
 
 export const AddButtonStyles = {
-  Div
+  Div,
 }

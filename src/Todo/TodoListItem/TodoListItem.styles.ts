@@ -1,4 +1,4 @@
-import Styled from 'styled-components';
+import Styled from 'styled-components'
 
 const Root = Styled.div`
   border-bottom: 1px dotted black;
@@ -18,11 +18,11 @@ const Root = Styled.div`
   span:nth-child(3) {
     flex-grow: 0;
   }
-`;
+`
 
 const Todo = Styled.div`
   display: flex;
-`;
+`
 
 const Title = Styled.span`
   margin-left: 5px;
@@ -30,7 +30,7 @@ const Title = Styled.span`
   span {
     cursor: pointer;
   }
-`;
+`
 
 export const TodoListItemStyles = {
   Root,
