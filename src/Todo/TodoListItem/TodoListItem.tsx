@@ -4,6 +4,7 @@ import { FiPlusCircle } from "react-icons/fi";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { TodoListItemStyles } from './TodoListItem.styles';
 import { IListItem } from '../interface';
+import ListNumber from '../../common/ListNumber/ListNumber';
 
 interface IProps {
   todo?: IListItem;
@@ -30,7 +31,7 @@ const TodoListItem: React.FC<IProps> = (props) => {
   } = props;
 
   const idCheck = number 
-    ? <TodoListItemStyles.Number>{number}</TodoListItemStyles.Number>
+    ? <ListNumber number={number} />
     : (<TodoListItemStyles.OpenButton><FiPlusCircle onClick={onOpenInsertSection} /></TodoListItemStyles.OpenButton>)
 
   const buttonGroup = number
