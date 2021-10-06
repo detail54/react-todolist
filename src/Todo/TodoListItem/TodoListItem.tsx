@@ -1,7 +1,6 @@
 import React from 'react'
 import TodoListItemView from './TodoListItemView';
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
-import { TodoListItemStyles } from './TodoListItem.styles';
 import { IListItem } from '../interface';
 import ListNumber from '../../common/ListNumber/ListNumber';
 import AddButton from '../../common/AddButton/AddButton';
