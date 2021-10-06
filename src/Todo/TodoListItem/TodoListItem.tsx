@@ -1,10 +1,12 @@
 import React from 'react'
 import TodoListItemView from './TodoListItemView';
-import { FiPlusCircle } from "react-icons/fi";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { TodoListItemStyles } from './TodoListItem.styles';
 import { IListItem } from '../interface';
 import ListNumber from '../../common/ListNumber/ListNumber';
+import AddButton from '../../common/AddButton/AddButton';
+import Button from '../../common/Button/Button';
+import ButtonGroup from '../../common/ButtonGroup/ButtonGroup';
 
 interface IProps {
   todo?: IListItem;
@@ -21,24 +23,28 @@ const TodoListItem: React.FC<IProps> = (props) => {
     todo = {
       id: 0, 
       title: '', 
-      content: ''
+      content: '',
     }, 
     number = 0,
     onOpenDetailSection,
     onTodoDelete,
     onOpenRewriteSection,
-    onOpenInsertSection,
+    onOpenInsertSection = () => {},
   } = props;
 
   const idCheck = number 
     ? <ListNumber number={number} />
-    : (<TodoListItemStyles.OpenButton><FiPlusCircle onClick={onOpenInsertSection} /></TodoListItemStyles.OpenButton>)
+    : <AddButton onClick={onOpenInsertSection} />
+
+  const buttons = (
+    <>
+      <Button onClick={() => onOpenRewriteSection(todo)}><FiEdit2 /></Button>
+      <Button onClick={() => onTodoDelete(todo)}><FiTrash2 /></Button>
+    </>
+  )
 
   const buttonGroup = number
-    ? (<TodoListItemStyles.Buttons>
-        <button onClick={() => onOpenRewriteSection(todo)}><FiEdit2 /></button>
-        <button onClick={() => onTodoDelete(todo)}><FiTrash2 /></button>
-      </TodoListItemStyles.Buttons>)
+    ? <ButtonGroup buttons={buttons} />
     : '';
 
   return (
